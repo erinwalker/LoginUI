@@ -3,6 +3,7 @@ package com.dyn.login.proxy;
 import com.dyn.login.config.ConfigHandler;
 import com.dyn.login.gui.GuiCcolLogin;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,4 +27,9 @@ public class CommonProxy implements IGuiHandler {
 
 		return null;
 	}
+	
+	public void openGUI(EntityPlayer player) {
+		FMLClientHandler.instance().displayGuiScreen(player, new GuiCcolLogin());
+	}
+	
 }

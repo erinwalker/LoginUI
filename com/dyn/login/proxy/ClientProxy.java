@@ -24,7 +24,7 @@ public class ClientProxy extends CommonProxy{
 	}
 
 	public void openGUI(EntityPlayer player) {
-		//FMLClientHandler.instance().displayGuiScreen(player));
+		super.openGUI(player);
 	}
 	
 	/*public void openGUI(EntityPlayer player, World world, int x, int y, int z, int meta, int dir) {

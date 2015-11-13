@@ -15,6 +15,7 @@ import net.minecraft.client.gui.GuiChat;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 
 public class EventHandler {
 	 @SubscribeEvent
@@ -26,7 +27,8 @@ public class EventHandler {
 	    if (LoginGUI.loginKey.getIsKeyPressed())
 	    {
 	      //this is where we toggle the gui screen and make the requests?
-			//LoginGUI.proxy.openGUI();
+	    	//we need to get the player
+			LoginGUI.proxy.openGUI(LoginGUI.tplayer);
 	    	/*new ThreadUpdateChecker();
 	        FMLCommonHandler.instance().bus().register(this);*/
 	    }
