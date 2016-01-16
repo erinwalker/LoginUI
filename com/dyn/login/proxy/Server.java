@@ -2,13 +2,19 @@ package com.dyn.login.proxy;
 
 public class Server implements Proxy {
 
-        /**
-         * @see forge.reference.proxy.Proxy#renderGUI()
-         */
-        @Override
-        public void renderGUI() {
-                // Actions on render GUI for the server (logging)
-                
-        }
+	/**
+	 * @see forge.reference.proxy.Proxy#renderGUI()
+	 */
+	@Override
+	public void renderGUI() {
+		// Actions on render GUI for the server (logging)
+
+	}
+
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+
+	}
 
 }

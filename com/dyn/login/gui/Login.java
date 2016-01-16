@@ -1,16 +1,12 @@
 package com.dyn.login.gui;
 
+import com.dyn.login.LoginGUI;
 import com.rabbit.gui.background.DefaultBackground;
 import com.rabbit.gui.component.control.Button;
 import com.rabbit.gui.component.control.TextBox;
-import com.rabbit.gui.component.display.Picture;
 import com.rabbit.gui.component.display.TextLabel;
 import com.rabbit.gui.render.TextAlignment;
 import com.rabbit.gui.show.Show;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityClientPlayerMP;
-import net.minecraft.util.ResourceLocation;
 
 public class Login extends Show {
 
@@ -46,12 +42,6 @@ public class Login extends Show {
 				.setTextChangedListener((TextBox textbox, String previousText) -> textChanged(textbox, previousText))
 				.setId("password"));
 
-		// The background
-		/*
-		 * this.registerComponent(new Picture(this.width / 8, (int) (this.height
-		 * * .3), (int) (this.width * (6.0 / 8.0)), (int) (this.height * .4),
-		 * new ResourceLocation("tutorial", "textures/gui/background.png")));
-		 */
 	}
 
 	public void textChanged(TextBox textbox, String previousText) {
@@ -65,5 +55,10 @@ public class Login extends Show {
 	public void loginPressed() {
 		// this is where the http request should happen, should probably thread
 		// it
+		
+		//if the login is successful it should set the variables
+		LoginGUI.DYN_Username = username;
+		LoginGUI.DYN_Password = password;
+		this.stage.close();
 	}
 }
